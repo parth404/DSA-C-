@@ -311,44 +311,38 @@ int main(){
     cin>>n;
 
     //outer loop for rows
-    // for(int rows=0; rows<n; rows++){
-    //     //inner loop for columns
-    //     //loop for spaces
-    //     for(int cols=0; cols<n-rows-1; cols++){
-    //         cout << " ";
-    //     }
-    //     //loop for column elements, elements increase as prime number pattern 1,3,5,7...
-    //     int start = 1;
-    //     for(int cols=0; cols<2*rows+1; cols++){
-    //         //printing elements for first and last row
-    //         if(rows==0 || rows==n-1){
-    //             //for last row print elements and spaces, elements are printed at every even interval hence:
-    //             if(cols%2==0){
-    //                 cout << start;
-    //                 start = start + 1;                    
-    //             }else{
-    //                 cout << " ";
-    //             }
-    //         } else {
-    //             //first elements are allways 1
-    //             if(cols==0){
-    //                 cout << 1;
-    //             } else{
-    //                 //last elements are the row number
-    //                 if(cols==2*rows+1-1){
-    //                     cout << rows+1;
-    //                 } else{
-    //                     cout << " ";
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     cout << endl;
-    // }
-    if(0){
-        cout << "helo";
-    } else{
-        cout << "bye";
+    for(int rows=0; rows<n; rows++){
+        //inner loop for columns
+        //loop for spaces
+        for(int cols=0; cols<n-rows-1; cols++){
+            cout << " ";
+        }
+        //loop for column elements, elements increase as prime number pattern 1,3,5,7...
+        int start = 1;
+        for(int cols=0; cols<2*rows+1; cols++){
+            //printing elements for first and last row
+            if(rows==0 || rows==n-1){
+                //for last row print elements and spaces, elements are printed at every even interval hence:
+                if(cols%2==0){
+                    cout << start;
+                    start = start + 1;                    
+                }else{
+                    cout << " ";
+                }
+            } else {
+                //first elements are allways 1
+                if(cols==0){
+                    cout << 1;
+                } else{
+                    //last elements are the row number
+                    if(cols==2*rows+1-1){
+                        cout << rows+1;
+                    } else{
+                        cout << " ";
+                    }
+                }
+            }
+        }
+        cout << endl;
     }
-    return 0;
 }
