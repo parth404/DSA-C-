@@ -104,26 +104,26 @@ int main(){
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 // Reverse an Array
-// int n;
-// cout << "Enter size of array: ";
-// cin >> n ;
-// cout<< "Enter array elements: ";
-// int arr[n];
-// for(int i=0; i<n; i++){
-//     cout << "Enter value for item number " << i+1 << ": ";
-//     cin >> arr[i];
-//     }
-// //reverse array items
-// int end = n-1;
-// int ans[n];
-// for(int i=0; i<n; i++){
-//     ans[i] = arr[end];
-//     end--;
-// }
-// cout << "reversed array is:" << endl;
-// for(int i=0; i<n; i++){
-//     cout << ans[i] << " ";
-// }
+int n;
+cout << "Enter size of array: ";
+cin >> n ;
+cout<< "Enter array elements: ";
+int arr[n];
+for(int i=0; i<n; i++){
+    cout << "Enter value for item number " << i+1 << ": ";
+    cin >> arr[i];
+    }
+//reverse array items
+int end = n-1;
+int ans[n];
+for(int i=0; i<n; i++){
+    ans[i] = arr[end];
+    end--;
+}
+cout << "reversed array is:" << endl;
+for(int i=0; i<n; i++){
+    cout << ans[i] << " ";
+}
 
 //>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 //VECTORS
@@ -131,18 +131,18 @@ int main(){
 // cout << "Enter size: ";
 // cin >> n;
 // vector<int>arr(n);
-vector<int>arr;// int ans = (sizeof(arr)/sizeof(int));
-// cout << ans << endl;
-cout << arr.size()<<endl;
-cout << arr.capacity()<<endl;
+// vector<int>arr;// int ans = (sizeof(arr)/sizeof(int));
+// // cout << ans << endl;
+// cout << arr.size()<<endl;
+// cout << arr.capacity()<<endl;
 
-//insert
-arr.push_back(5);
-arr.push_back(6);
-//remove
-arr.pop_back();
-//print vector
-for(int i=0; i<arr.size(); i++){
-    cout << arr[i] << " "; 
-}
+// //insert
+// arr.push_back(5);
+// arr.push_back(6);
+// //remove
+// arr.pop_back();
+// //print vector
+// for(int i=0; i<arr.size(); i++){
+//     cout << arr[i] << " "; 
+// }
 }
