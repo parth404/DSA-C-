@@ -6,3 +6,6 @@
 
 #Ignore temp files
 tempCodeRunnerFile.cpp
+
+#Ignore executable files
+*.exe
