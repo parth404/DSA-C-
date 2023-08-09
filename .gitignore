@@ -3,3 +3,6 @@
 
 # Ignore all yaml files
 *.yaml
+
+#Ignore temp files
+tempCodeRunnerFile.cpp

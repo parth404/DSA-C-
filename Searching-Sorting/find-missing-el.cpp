@@ -1,64 +1,31 @@
-// Find the last occurence of an element
+// find missing element in array
 
 #include <iostream>
 #include <vector>
 using namespace std;
-
-int lastOccurence(vector<int> v, int target)
+int findElement(vector<int> arr)
 {
-
-    int start = 0;
-    int end = v.size() - 1;
-    int mid = start + (end - start) / 2;
-    int ans = -1;
-
-    while (start <= end)
+    int s = 0;
+    int e = arr.size() - 1;
+    int mid = s + (e - s) / 2;
+    while ((e - s) > 1)
     {
-        // define middle element in array
-        int element = v[mid];
-        if (element == target)
+        if (arr[s] - s != arr[mid] - mid)
         {
-            // store answer, if this is last occurence it will be returned after the loop
-            ans = mid;
-            // search in rhs as last occurence has to be greater than or equal to mid
-            start = mid + 1;
+            e = mid; // search in left
         }
-        else if (target > element)
+        else if (arr[e] - e != arr[mid] - mid)
         {
-            // search in rhs
-            start = mid + 1;
+            s = mid; // search in right
         }
-        else if (target < element)
-        {
-            // search in lhs
-            end = mid - 1;
-        }
-
-        // Update value of mid, since we are changing start and end values above
-        mid = start + (end - start) / 2;
+        mid = s + (e - s) / 2; // update mid
     }
-    return ans;
+    return arr[s] + 1; // return arr[s] + 1
 }
-
 int main()
 {
-
-    vector<int> v{1, 2, 3, 4, 6, 7};
-    int target = 1;
-
-    // using binary search to find target in array and
-    // returning index or returning -1 if target not found
-
-    int indexOfLastOccurence = lastOccurence(v, target);
-
-    if (indexOfLastOccurence == -1)
-    {
-        cout << "Target not found" << endl;
-    }
-    else
-    {
-        cout << "Last occurence found at " << indexOfLastOccurence << " index" << endl;
-    }
-
+    vector<int> arr{1, 2, 3, 4, 5, 7, 8, 9, 10};
+    int missingElement = findElement(arr);
+    cout << "Missing Element = " << missingElement << endl;
     return 0;
 }

@@ -44,7 +44,7 @@ int main()
 {
 
     vector<int> v{1, 3, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 9};
-    int target = 3;
+    int target = 7;
 
     // using binary search to find target in array and
     // returning index or returning -1 if target not found
