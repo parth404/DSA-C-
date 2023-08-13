@@ -50,6 +50,7 @@ int findPivot(vector<int> &nums)
         }
         // CASE 2: pivot element can be on mid, mid+1 or mid-1
         //  pivot element will be the max number of these three
+        //  check if mid+1 and mid-1 are within the range of s & e
         if (mid + 1 <= e && nums[mid] > nums[mid + 1])
         {
             return mid;
