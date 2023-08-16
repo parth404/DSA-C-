@@ -29,12 +29,34 @@
 #include <vector>
 using namespace std;
 
+// Binary search
+int bs(vector<int> nums, int s, int x)
+{
+    int e = nums.size() - 1;
+    while (s <= e)
+    {
+        int mid = s + (e - s) / 2;
+
+        if (nums[mid] == x)
+        {
+            return nums[mid];
+        }
+        else if (x > nums[mid])
+        {
+            s = mid + 1;
+        }
+        else
+        {
+            e = mid - 1;
+        }
+    }
+    return -1;
+}
+
 int main()
 {
     vector<int> nums{1, 2, 3, 4, 5};
     int k = 1;
-
-    // ---------------------------------------------------------------Two Pointer Approach-----------------------------------------------------------------------------------------------------------------------------
 
     // step 1: Sort the array
     sort(nums.begin(), nums.end());
@@ -42,33 +64,51 @@ int main()
     // create set to store ans, to remove duplicates
     set<pair<int, int>> ans;
 
+    // ---------------------------------------------------------------Two Pointer Approach-----------------------------------------------------------------------------------------------------------------------------
+
     // Step 2: Iterate through the array and compare differences with K
-    int i = 0, j = 1;
-    while (j < nums.size())
+    // int i = 0, j = 1;
+    // while (j < nums.size())
+    // {
+    //     // calculate difference
+    //     int diff = nums[j] - nums[i];
+    //     if (diff == k)
+    //     {
+    //         // insert pair in ans
+    //         ans.insert({nums[i], nums[j]});
+    //         // increase i & j index
+    //         ++i, ++j;
+    //     }
+    //     else if (diff > k)
+    //     {
+    //         i++;
+    //     }
+    //     else
+    //     {
+    //         j++;
+    //     }
+    //     if (i == j)
+    //     {
+    //         j++;
+    //     }
+    // }
+
+    // ---------------------------------------------------------------Binary Search Approach-----------------------------------------------------------------------------------------------------------------------------
+
+    for (int i = 0; i < nums.size(); i++)
     {
-        // calculate difference
-        int diff = nums[j] - nums[i];
-        if (diff == k)
+
+        // since nums[j]-nums[i]=k can be written as:
+        // nums[j]=nums[i]+k
+        // standing on nums[i] need to find nums[i]+k which is > nums[i]
+        // thus, it will be on rhs of the sorted array
+        // using Binary Search to find target nums[i]+k and return -1 if it doesn't exist:
+
+        if ((bs(nums, i + 1, nums[i] + k)) != -1)
         {
-            // insert pair in ans
-            ans.insert({nums[i], nums[j]});
-            // increase i & j index
-            ++i, ++j;
-        }
-        else if (diff > k)
-        {
-            i++;
-        }
-        else
-        {
-            j++;
-        }
-        if (i == j)
-        {
-            j++;
+            ans.insert({nums[i], nums[i] + k});
         }
     }
-
     cout << "Output = " << ans.size() << endl;
 
     return 0;
