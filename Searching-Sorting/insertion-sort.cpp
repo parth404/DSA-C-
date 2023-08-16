@@ -3,6 +3,9 @@
 // then we shift elements bigger than current element to i+1
 // then we copy the value of current element to correct index
 
+// t.c
+//
+
 #include <iostream>
 #include <vector>
 using namespace std;
