@@ -11,7 +11,7 @@ void changeCase(char name[]) // t.c: O(n) - linear, s.c: O(1)
     int n = strlen(name);
     while (i < n)
     {
-        if (name[i] != ' ')
+        if (name[i] != ' ' && name[i] >= 'a' && name[i] <= 'z')
         {
             name[i] = name[i] - 'a' + 'A'; // for upper to lower case use A - a instead
         }
