@@ -40,31 +40,31 @@ using namespace std;
 //     }
 // }
 
-// BETTER APPROACH -> Frequency Table for Strings
+// BETTER APPROACH -> Frequency Table for Strings -> T.C: O(m+n)
 
 // TOTAL ASCII = 256
 bool isAnagram(string s, string t)
 {
-    // since ACII characters lie from 0 to 256
-    // we can create an array of length 256 and initialize it with 0 (all 0 elements)
-    // indexes from 0 to 256 represent ASCII values
+    // since ACII characters lie from 0 to 255
+    // we can create an array of length 255+1 and initialize it with 0 (all 0 elements)
+    // indexes from 0 to 255 represent ASCII values
     int freqTable[256] = {0};
 
     // Our approach invloves looping through the string and increasing count
     // for respective ASCII values as they occur in the first string
-    for (int i = 0; i < s.length(); i++)
+    for (int i = 0; i < s.length(); i++) // O(n)
     {
         freqTable[s[i]]++;
     }
 
     // Now we can decrease count of the ACII values for the second string
-    for (int i = 0; i < t.length(); i++)
+    for (int i = 0; i < t.length(); i++) // O(m)
     {
         freqTable[s[i]]--;
     }
 
     // If the strings are anagram, all values in the array will be reset to 0
-    for (int i = 0; i < 256; i++)
+    for (int i = 0; i < 256; i++) // O(256) -> O(1)
     {
         if (freqTable[i] != 0)
             return false;
