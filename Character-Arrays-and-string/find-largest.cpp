@@ -22,6 +22,7 @@
 #include <string>
 #include <algorithm>
 using namespace std;
+
 bool cmp(int a, int b)
 {
     return to_string(a) + to_string(b) > to_string(b) + to_string(a);
