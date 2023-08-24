@@ -48,6 +48,7 @@ string removeOccurrences(string s, string part)
     }
     return s;
 }
+
 int main()
 {
     // input
@@ -58,7 +59,7 @@ int main()
 
     cout << "entered string is = " << s << endl;
 
-        // print result
+    // print result
     cout << "transformed string is: " << removeOccurrences(s, part) << endl;
 
     return 0;
