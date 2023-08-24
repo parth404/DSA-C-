@@ -22,42 +22,45 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <algorithm>
 using namespace std;
 
 string longestCommonPrefix(vector<string> &strs)
 {
-    string ans = "";
+    // store ans
+    string ans;
+    // iterator
     int i = 0;
 
     while (true)
     {
-        char curr = 0;
+        char curr_ch = 0; // current character to compare with characters of other strings
+        // iterate through all strings in vector strs
         for (auto str : strs)
         {
-            if (i >= str.size())
+            // if out of bound
+            if (i >= strs.size())
             {
-                curr = 0;
+                curr_ch = 0;
                 break;
             }
-            if (curr == 0)
+            // At the begining
+            if (curr_ch == 0)
             {
-                curr = str[i];
+                curr_ch = str[i]; // set first character of first item as current character
             }
-            else if (str[i] != curr)
+            else if (str[i] != curr_ch) // if item's current character doesn't match previous items respective character
             {
-                curr = 0;
+                curr_ch = 0;
                 break;
             }
         }
-        if (curr == 0)
+        if (curr_ch == 0) // if current character is reset to 0
         {
             break;
         }
-        ans.push_back(curr);
-        i++;
+        ans.push_back(curr_ch);
+        i++; // move to next character
     }
-
     return ans;
 }
 
