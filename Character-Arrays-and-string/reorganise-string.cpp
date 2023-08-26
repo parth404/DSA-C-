@@ -41,7 +41,7 @@ string reorganizeString(string s)
         if (hash[i] > max_freq)
         {
             max_freq = hash[i];
-            max_freq_char = i + 'a';
+            max_freq_char = i + 'a'; // converts to char
         }
     }
 
