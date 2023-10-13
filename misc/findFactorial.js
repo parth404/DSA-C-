@@ -8,6 +8,8 @@ const findFactorial = (num) => {
   return fact;
 };
 
-const number = 6;
+// TODO: Recusrsive solution
+
+const number = 45; //won't return correct result
 
 console.log(`factorial of ${number} is ${findFactorial(number)}`);
