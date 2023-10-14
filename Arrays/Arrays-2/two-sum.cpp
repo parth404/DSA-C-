@@ -42,7 +42,7 @@ vector<int> twoSum(vector<int> &nums, int target)
     {
         for (int j = 1; j < nums.size(); j++)
         {
-            if (nums[i] + nums[j] == target)
+            if (nums[i] + nums[j] == target && i != j)
             {
                 return {i, j};
             }
@@ -53,8 +53,8 @@ vector<int> twoSum(vector<int> &nums, int target)
 
 int main()
 {
-    vector<int> nums{3, 2, 4};
-    int target = 6;
+    vector<int> nums{1, 2, 5, 6, 7};
+    int target = 4;
     vector<int> ans = twoSum(nums, target);
 
     // Print output
