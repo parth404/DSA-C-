@@ -6,6 +6,7 @@
 
 #Ignore temp files
 tempCodeRunnerFile.cpp
+tempCodeRunnerFile.js
 
 #Ignore executable files
 *.exe
