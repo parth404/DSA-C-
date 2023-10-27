@@ -16,7 +16,7 @@ x();
 // execute console.log()
 // print result of setTimeout once timer is resolved
 
-//  question - Print 1 after 1s, 2 after 2s, 3 after 3s, 4 after 4s, 5 after 5s
+// ***QUESTION - Print 1 after 1s, 2 after 2s, 3 after 3s, 4 after 4s, 5 after 5s
 
 function printX() {
   for (var i = 1; i <= 5; i++) {
